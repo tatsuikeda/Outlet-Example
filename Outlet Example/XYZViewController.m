@@ -9,6 +9,7 @@
 #import "XYZViewController.h"
 
 @interface XYZViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @end
 
@@ -17,7 +18,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.textLabel.text = @"Hello World";
+    self.textLabel.textColor = [UIColor greenColor];
+    self.textLabel.shadowColor = [UIColor grayColor];
+    NSLog(@"%@", self.textLabel.text);
+    NSLog(@"%@", self.textLabel.shadowColor);
 	// Do any additional setup after loading the view, typically from a nib.
+    [self doSomething];
+}
+
+- (void)doSomething {
+	NSInteger a = 1;
+	NSInteger b = 2;
+	NSInteger c = a + b;
 }
 
 - (void)didReceiveMemoryWarning
